@@ -4,7 +4,7 @@ setup:
     git init
     npm install
 
-fmt *args="":
+fmt *args="slides.md":
     npm run format -- "$@"
 
 preview:
