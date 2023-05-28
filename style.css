@@ -5,8 +5,18 @@ h1 {
 h2 {
   font-weight: 450 !important;
   line-height: 1.8 !important;
+  margin-bottom: 30px !important;
 }
 
 blockquote {
-  font-size: 20 !important;
+  font-size: 20px !important;
+}
+
+p {
+  font-size: 25px !important;
+  margin-bottom: 30px !important;
+}
+
+span {
+  font-size: 20px !important;
 }
