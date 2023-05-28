@@ -1,0 +1,16 @@
+{
+  "name": "pyconit-polars",
+  "private": true,
+  "scripts": {
+    "preview": "slidev --open",
+    "format": "slidev format",
+    "build": "slidev build",
+    "export": "slidev export",
+    "deploy": "slidev build slides.md --base /pyconit-polars"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.3",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*"
+  }
+}
