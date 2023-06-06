@@ -20,7 +20,7 @@ title: 🐻‍❄️ Polars
 </div>
 
 <div class="absolute right-5 top-5">
-<img height="150" width="150"  src="qr-github.svg">
+<img height="150" width="150"  src="/qr-github.svg">
 </div>
 
 
@@ -377,5 +377,5 @@ layout: intro
 Please send feedback at lucabaggi@duck.com
 
 <div class="absolute right-5 top-5">
-<img height="150" width="150"  src="qr-linkedin.svg">
+<img height="150" width="150"  src="/qr-linkedin.svg">
 </div>
