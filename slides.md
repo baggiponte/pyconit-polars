@@ -8,6 +8,7 @@ title: 🐻‍❄️ Polars
 ---
 
 # 🐻‍❄️ Polars
+
 ## Is the great dataframe showdown finally over?
 
 <div class="absolute bottom-10">
@@ -15,6 +16,7 @@ title: 🐻‍❄️ Polars
     👤 Luca Baggi
     💼 ML Engineer @Futura
     🐍 Organiser @Python Milano
+
 </div>
 
 <div class="absolute right-5 top-5">
@@ -25,6 +27,7 @@ title: 🐻‍❄️ Polars
 ---
 
 # 🙋 Raise your hand if...
+
 <br>
 
 <v-clicks>
@@ -42,6 +45,7 @@ title: 🐻‍❄️ Polars
 ---
 
 # 📍 Keynote outline
+
 <br>
 
 <v-clicks>
@@ -58,7 +62,8 @@ title: 🐻‍❄️ Polars
 ---
 
 # 🏎️ pandas 2.0 and Arrow
-<br> 
+
+<br>
 
 With pandas>=2.0, you can use `dtype_backend=“pyarrow”` to use the Arrow in-memory format. This means:
 
@@ -66,17 +71,18 @@ With pandas>=2.0, you can use `dtype_backend=“pyarrow”` to use the Arrow in-
 
 ✅ More efficient data types and **lower memory usage**.
 
-❌ *Only some* operations leverage Acero, i.e. pyarrow query/compute engine (notably, not `groupby`s!). In other words, **some (most?) operations are still single threaded and unoptimised**.
+❌ _Only some_ operations leverage Acero, i.e. pyarrow query/compute engine (notably, not `groupby`s!). In other words, **some (most?) operations are still single threaded and unoptimised**.
 </v-clicks>
 
 
 ---
 
 # 🏎️ pandas 2.0 and Arrow
-<br> 
+
+<br>
 
 On the other hand, Polars:
- 
+
 <v-clicks>
 
 🎛️ Utilises all **available cores on your machine**.
@@ -92,12 +98,13 @@ On the other hand, Polars:
 ---
 
 # 🏎️ pandas 2.0 and Arrow
+
 📹 Must watch
 
 🏹 Alessandro Molina covered you all about Arrow in [Apache Arrow as a full stack data engineering solution](https://pycon.it/en/event/apache-arrow-as-a-full-stack-data-engineering-solution).
 <br>
 
-🔥 Alberto Danese  made a performance comparison in [Beyond Pandas: lightning fast in-memory dataframes with Polars](https://pycon.it/en/event/beyond-pandas-lightning-fast-in-memory-dataframes-with-polars).
+🔥 Alberto Danese made a performance comparison in [Beyond Pandas: lightning fast in-memory dataframes with Polars](https://pycon.it/en/event/beyond-pandas-lightning-fast-in-memory-dataframes-with-polars).
 
 🐼 Fabio Lipreri will show you how to speed up your pandas pipelines [pandas on steroids](https://pycon.it/en/event/pandas-on-steroids) in Room Pizza (this room), 16:30.
 
@@ -105,6 +112,7 @@ On the other hand, Polars:
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
+
 🪠 I/O
 
 ```python{1,6|3,8|4,9}
@@ -123,7 +131,8 @@ data.write_*("path/to/destination.*")
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
-🪠 I/O but [*blazingly fast*](https://blazinglyfast.party/)
+
+🪠 I/O but [_blazingly fast_](https://blazinglyfast.party/)
 
 ```python{1|3|7}
 raw = pl.scan_*("/path/to/source.*") # creates a LazyFrame
@@ -139,6 +148,7 @@ processed.sink_parquet("path/to/destination.*")
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
+
 🪠 What about other formats?
 
 ```python
@@ -151,6 +161,7 @@ data = pl.from_pandas(raw)
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
+
 🛠️ Data wrangling: selection
 
 ```python{1,9|2|3|4|5|6|7|8}
@@ -158,7 +169,7 @@ raw.select(
   "col1", "col2"
   pl.col("col1", "col2"),
   pl.col(pl.DataType),      # any valid polars datatype
-  pl.col("*"),         
+  pl.col("*"),
   pl.col("$A.*^]"),         # all columns that match a regex pattern
   pl.all(),
   pl.all().exclude(...)     # names, regex, types...
@@ -169,6 +180,7 @@ raw.select(
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
+
 🛠️ Data wrangling: manipulate columns
 
 ```python{all|4,15|5-7|8-9|10-12|13-14}
@@ -194,6 +206,7 @@ raw.select(
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
+
 🛠️ Data wrangling: filtering
 
 ```python{all|4-7|5|6}
@@ -211,6 +224,7 @@ raw.select(
 ---
 
 # ♻️ Rewriting pandas code ~~takes time~~ is easy!
+
 🛠️ Data wrangling: `groupby`
 
 ```python{all|3|4-8|5|6|7}
@@ -231,6 +245,7 @@ And it works for up- and down-sampling date types too (temporal aggregation)!
 ---
 
 # ⚡Other (cool) features
+
 🌐 Explore the compute graph, or profile the performance
 
 ```python{all|1,2|4}
@@ -244,6 +259,7 @@ result, time = raw.filter(...).with_columns(...).profile()
 ---
 
 # ⚡Other (cool) features
+
 🚀 Even more blazingly-fasterer with `LazyFrame`s
 
 ```python{all|1|2|4-9|8}
@@ -262,6 +278,7 @@ data_frame: pl.DataFrame = (
 ---
 
 # ⚡Other (cool) features
+
 🦆 Polars can also quack SQL!
 
 ```python{1|3,4|6|8}
@@ -279,6 +296,7 @@ ctx = pl.SQLContext(df=df, lf=lf)
 ---
 
 # ⚡Other (cool) features
+
 🦆 Polars can also quack SQL!
 
 ```python{3-8|5,6|8}
@@ -287,7 +305,7 @@ url = "https://gist.githubusercontent.com/ritchie46/cac6b337ea52281aa23c049250a4
 pokemon = pl.read_csv(url)
 
 # set to False to optimise your queries
-ctx = pl.SQLContext(register_globals=True, eager_execution=True) 
+ctx = pl.SQLContext(register_globals=True, eager_execution=True)
 
 first_five = ctx.execute("SELECT * from pokemon LIMIT 5")
 ```
@@ -296,8 +314,8 @@ first_five = ctx.execute("SELECT * from pokemon LIMIT 5")
 ---
 
 # ⚡Other (cool) features
-🦆 Polars can also quack SQL *from the command line*
 
+🦆 Polars can also quack SQL _from the command line_
 
 ```bash
 $ polars
@@ -322,7 +340,8 @@ shape: (27, 4)
 ---
 
 # ⚡Other (cool) features
-🦆 Polars can also quack SQL *from the command line*!
+
+🦆 Polars can also quack SQL _from the command line_!
 
 ```bash
 $ echo "SELECT category FROM read_csv('...')" | polars
@@ -345,6 +364,7 @@ layout: intro
 ---
 
 # 🙋 Questions?
+
 🔗 Check out the [docs](https://pola-rs.github.io/polars/py-polars/html/index.html) or the [user guide](https://pola-rs.github.io/polars-book/user-guide/index.html)!
 
 
@@ -353,6 +373,7 @@ layout: intro
 ---
 
 # 🙏 Thank you!
+
 Please send feedback at lucabaggi@duck.com
 
 <div class="absolute right-5 top-5">
