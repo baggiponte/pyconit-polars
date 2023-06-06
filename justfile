@@ -1,11 +1,11 @@
 set positional-arguments
 
 setup:
-    git init
+    @if ! [[ -d .git ]]; then git init; fi
     npm install
 
 fmt *args="slides.md":
-    npm run format -- "$@"
+    @npm run format -- "$@"
 
 preview:
     npm run preview
@@ -17,3 +17,5 @@ bump: dry-bump
     cz bump
     git push
     git push --tag
+
+alias release := bump
