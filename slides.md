@@ -3,7 +3,8 @@ theme: default
 layout: cover
 highlighter: prisma
 colorSchema: light
-favicon: favicon/url
+favicon: >-
+  https://raw.githubusercontent.com/pola-rs/polars-static/master/logos/polars-logo-dark.svg
 title: 🐻‍❄️ Polars
 ---
 
