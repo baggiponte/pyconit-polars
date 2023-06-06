@@ -1,3 +1,10 @@
+## 0.2.1 (2023-06-06)
+
+### Fix
+
+- add favicon
+- change feedback invitation message
+
 ## 0.2.0 (2023-06-06)
 
 ### Feat
