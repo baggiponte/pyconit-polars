@@ -21,12 +21,16 @@ set positional-arguments
 @preview:
 	npm run preview
 
+# Test whether slides can be built to HTML
+@test-build:
+  npm run build
+
 # Test the release bump
 @test-bump:
 	cz bump --check-consistency --dry-run
 
 # Bump the slideshow version
-@release: test-bump
+@release: test-build test-bump
 	cz bump
 	git push
 	git push --tag
