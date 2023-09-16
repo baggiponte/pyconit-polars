@@ -7,8 +7,6 @@ on:
     paths:
       - .github/workflows/deploy.yml
       - slides.md
-      - pages/**
-      - components/**
       - public
       - package.json
       - package-lock.json
@@ -29,6 +27,4 @@ jobs:
         with:
           build_dir: dist
         env:
-          
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
