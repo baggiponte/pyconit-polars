@@ -2,7 +2,7 @@
 
 [![cookiecutter slidev](https://img.shields.io/badge/cookiecutter-slidev-D4AA00?logo=cookiecutter&logoColor=fff)](https://github.com/baggiponte/cookiecutter-slidev)
 
-Source code for the talk *Polars: is the great dataframe showdown finally over?* at PyConIT 2023.
+Source code for the talk [*Polars: is the great dataframe showdown finally over?*](https://2023.pycon.it/en/event/is-the-great-dataframe-showdown-finally-over-enter-polars) at [PyCon Italy 2023](https://2023.pycon.it/en).
 
 - 📽️ [Live](https://www.youtube.com/watch?v=XsxrhGlkyk0)
 
