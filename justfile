@@ -7,7 +7,7 @@ set positional-arguments
 
 # Install dependencies
 @install:
-	{{just_executable()}} needs npm
+	{{just_executable()}} needs npm npx
 	npm install
 
 # Create a git and GitHub repo, install dependencies
@@ -15,22 +15,29 @@ set positional-arguments
 
 # Format the slides
 @fmt *args="slides.md":
-	npm run format -- "$@"
+	npx slidev format -- "$@"
 
 # Display a live-preview of the slideshow
 @preview:
-	npm run preview
+	npx slidev preview --open
+
+# Build the slides to HTML
+@build slides="slides.md":
+  npx slidev build -- "$1"
+
+# Clean build dir
+@clean:
+  rm -rf dist
 
 # Test whether slides can be built to HTML
-@test-build:
-  npm run build
+@test-build: build clean
 
 # Test the release bump
 @test-bump:
 	cz bump --check-consistency --dry-run
 
 # Bump the slideshow version
-@release: test-build test-bump
+@release: fmt test-build test-bump
 	cz bump
 	git push
 	git push --tag
