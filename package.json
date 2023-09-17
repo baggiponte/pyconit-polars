@@ -2,7 +2,7 @@
   "name": "pyconit-polars",
   "private": true,
   "dependencies": {
-    "@slidev/cli": "^0.42.7",
+    "@slidev/cli": "^0.43.3",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   }
