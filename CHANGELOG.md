@@ -1,3 +1,9 @@
+## 0.2.4 (2023-11-26)
+
+### Refactor
+
+- update subtitle format
+
 ## 0.2.3 (2023-06-06)
 
 ### Fix
