@@ -9,8 +9,7 @@ title: 🐻‍❄️ Polars
 ---
 
 # 🐻‍❄️ Polars
-
-## Is the great dataframe showdown finally over?
+Is the great dataframe showdown finally over?
 
 <div class="absolute bottom-10">
 
